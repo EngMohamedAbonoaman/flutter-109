@@ -6,10 +6,12 @@ class BuildTextField extends StatelessWidget {
    BuildTextField({super.key,
      required this.title,
      required this.hint,
-     required this.size});
+     required this.size,
+   required this.textEditingController});
   String title;
   String hint;
   double size;
+  TextEditingController textEditingController;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -18,6 +20,7 @@ class BuildTextField extends StatelessWidget {
         Text(title,style: AppStyles.mediumStyle,),
         SizedBox(height: 10,),
         TextFormField(
+          controller: textEditingController,
           decoration: InputDecoration(
               hintText: hint,
               contentPadding:  EdgeInsets.all(size),

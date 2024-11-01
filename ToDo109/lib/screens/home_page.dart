@@ -19,6 +19,12 @@ class _HomePageState extends State<HomePage> {
     AllTasksScreen(),
     CompleteTasksScreen()
   ];
+
+
+  Future<void> getData() async{
+   await Future.delayed(Duration(seconds: 3),()=>print("Future Fun is finished"));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,7 +40,7 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: (){
+        onPressed: () {
           Navigator.of(context).push(MaterialPageRoute(builder: (context)=>AddTaskScreen()));
         },
         backgroundColor: AppColors.primaryColor,

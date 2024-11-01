@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:todo109/screens/edit_task.dart';
 
 import '../Shared/app_colors.dart';
 import '../Shared/app_styles.dart';
@@ -18,12 +19,14 @@ class BuildTaskItem extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.baseline,
               textBaseline: TextBaseline.alphabetic,
               children: [
-                Text("ToDo Title",style: AppStyles.mediumStyle.copyWith(color: AppColors.primaryColor),),
-                const Text("ToDo sub title",style: AppStyles.smallStyle,)
+                Text(taskTitle,style: AppStyles.mediumStyle.copyWith(color: AppColors.primaryColor),),
+                Text(taskSubTitle,style: AppStyles.smallStyle,)
               ],
             ),
             Spacer(),
-            const Icon(Icons.edit,color: AppColors.primaryColor,),
+            IconButton(onPressed: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>EditTaskScreen()));
+            },icon: Icon(Icons.edit,color: AppColors.primaryColor,),),
             SizedBox(width: 10,),
             Icon(Icons.delete_outline,color: AppColors.primaryColor,),
             SizedBox(width: 10,),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:todo109/Network/DB.dart';
 import 'package:todo109/widgets/build_task_item.dart';
 
 import '../Shared/app_colors.dart';
@@ -11,8 +12,9 @@ class AllTasksScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView.builder(
       physics: const BouncingScrollPhysics(),
-      itemCount: 10,
-      itemBuilder: (context,index)=> BuildTaskItem(taskTitle: "ToDo Title", taskSubTitle: "ToDo sub title") ,
+      itemCount: DBRepo.myList.length,
+      itemBuilder: (context,index)=> BuildTaskItem(taskTitle: DBRepo.myList[index]['title'],
+          taskSubTitle: DBRepo.myList[index]['description']) ,
     );
   }
 }
