@@ -51,7 +51,7 @@ class _HomePageState extends State<HomePage> {
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.list),label: "All Tasks"),
           BottomNavigationBarItem(icon: Icon(Icons.check),label: "Complete Tasks"),
-
+ 
         ],
         backgroundColor: Colors.white,
         currentIndex: selectedIndex,
